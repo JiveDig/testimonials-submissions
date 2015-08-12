@@ -15,6 +15,26 @@ If you want your submissions to be published immediately you can use the `post_s
 ## Hooks & Filters
 There are a number of hooks and filters included in the plugin for quickly customizing the form
 
+`tbws_submission_form`
+
+This hook runs at prior to outputting the form via the shortcode. You can use it to display content, or restrict access to the form for various conditions.
+
+Example usage:
+```
+// Restric access to testimonial submission for if not logged in
+add_filter( 'tbws_submission_form', 'prefix_form_require_logged_in_user' );
+function prefix_form_require_logged_in_user( $output ) {
+    // Show a login form if not logged in
+    if ( ! is_user_logged_in() ) {
+        $output = '<p>' . __( 'You must be a logged in to submit a testimonial.', 'text-domain' ) . '</p>';
+        $output .= wp_login_form( array( 'echo' => false ) );
+        return $output;
+    }
+    // Otherwise, show the default output
+    return $output;
+}
+```
+
 **These hook allows you to add more fields to the form.**
 Accepts anything CMB2 allows, including any custom field types you create
 
