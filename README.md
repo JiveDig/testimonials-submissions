@@ -15,7 +15,7 @@ If you want your submissions to be published immediately you can use the `post_s
 ## Hooks & Filters
 There are a number of hooks and filters included in the plugin for quickly customizing the form
 
-### Form output
+### * Form output
 `tbws_submission_form`
 
 This filter runs at prior to outputting the form via the shortcode. You can use it to display content, or restrict access to the form for various conditions.
@@ -36,7 +36,7 @@ function prefix_form_require_logged_in_user( $output ) {
 }
 ```
 
-### Form fields
+### * Form fields
 **These hook allows you to add more fields to the form.**
 Accepts anything CMB2 allows, including any custom field types you create
 
@@ -60,5 +60,22 @@ function prefix_my_new_form_field( $cmb ) {
 }
 ```
 
-### Form data processing
+### * Form data processing
 **These filters allow you to process the data submitted by the form, including any custom form fields you may have added**
+
+`tbws_submitted_post_data` - Filter the post data prior to wp_insert_post
+
+`tbws_submitted_post_meta` - Filter the post meta prior to update_post_meta
+
+`tbws_content_kses` - Change wp_kses arguments
+See https://codex.wordpress.org/Function_Reference/wp_kses
+
+### * Form redirect
+** Filter the redirect url**
+
+`tbws_success_redirect`
+
+### * Form success message
+** Filter the success message HTML
+
+`tbws_success_message`
