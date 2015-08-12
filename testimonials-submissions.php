@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Testimonials - Submissions
  * Plugin URI: http://thestizmedia.com
- * Description: Front-end posting of Testimonials by WooThemes
+ * Description: Front-end posting of Testimonials by WooThemes via CMB2
  * Version: 1.0.0
  * Author: Mike Hemberger
  * Author URI: http://thestizmedia.com

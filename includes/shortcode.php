@@ -27,6 +27,7 @@ function tbws_testimonial_form_register() {
         'cmb_styles'   => false,
     ) );
 
+    do_action( 'tbws_form_before', $cmb );
 
     $cmb->add_field( array(
         'name'    => __( 'Name', 'tbws' ),
@@ -52,7 +53,7 @@ function tbws_testimonial_form_register() {
     ) );
 
     // Hook for developers to add new fields before content field
-    do_action( 'tbws_content_field_before', $cmb );
+    do_action( 'tbws_form_content_field_before', $cmb );
 
     $cmb->add_field( array(
         'name'    => __( 'Testimonial', 'tbws' ),
@@ -61,7 +62,7 @@ function tbws_testimonial_form_register() {
     ) );
 
     // Hook for developers to add new fields after content field
-    do_action( 'tbws_content_field_after', $cmb );
+    do_action( 'tbws_form_after', $cmb );
 
 }
 
@@ -87,15 +88,14 @@ function tbws_testimonial_cmb2_get() {
  * @param  array
  * @return string       Form html
  */
-add_shortcode( 'testimonial_form', 'tbws_do_new_offer_submission_shortcode' );
+add_shortcode( 'tbws_form', 'tbws_do_new_offer_submission_shortcode' );
 function tbws_do_new_offer_submission_shortcode() {
-
-    // Hook for developers to check if user can access the form
-    do_action( 'tbws_submission_access' );
 
     // Initiate our output variable
     $output = '';
 
+    // Display a success message after form submission
+    // Also hides our form by returning early
     if (isset($_GET['success']) && $_GET['success'] == 'true') {
         $output .= '<div id="message" class="success">' . __( 'Thank you! Your testimonial has been submitted.', 'tbws' ) . '</div>';
         return apply_filters( 'tbws_success_message', $output );
@@ -123,12 +123,15 @@ function tbws_do_new_offer_submission_shortcode() {
         ) );
     }
 
+    // Form button text
     $form_args = array(
         'save_button' => __( 'Submit Testimonial', 'tbws' ),
     );
 
     // Get our form
     $output .= cmb2_get_metabox_form( $cmb, 'tbws_testimonial_id', $form_args );
+
+    $output = apply_filters( 'tbws_submission_form', $output );
 
     return $output;
 
