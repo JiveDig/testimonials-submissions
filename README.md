@@ -5,29 +5,23 @@ Front end posting of 'Testimonials by WooThemes' plugin. Form and processing via
 
 ## Shortcode
 ```
-[testimonial_form]
+[tbws_form]
 ```
 ```
-[testimonial_form post_status="%your status here%"]
+[tbws_form post_status="%your status here%"]
 ```
-Use shortcode `[testimonial_form]` to insert the submission form on any WP post/page.
+Use shortcode `[tbws_form]` to insert the submission form on any WP post/page.
 Submissions default to a post status of **draft** so they can be manually approved.
-If you want your submissions to be published immediately you can use the `post_status` attribute in the shortcode. Example `[testimonial_form post_status="publish"]`.
+If you want your submissions to be published immediately you can use the `post_status` attribute in the shortcode. Example `[tbws_form post_status="publish"]`.
 
 ## Hooks & Filters
 There are a number of hooks and filters included in the plugin for quickly customizing the form
 
 **These hook allows you to add more fields to the form.**
 Accepts anything CMB2 allows, including any custom field types you create
-```
-tbws_form_before
-```
-```
-tbws_form_content_field_before
-```
-```
-tbws_form_after
-```
+`tbws_form_before`
+`tbws_form_content_field_before`
+`tbws_form_after`
 Example usage:
 ```
 // Add a new text field after the form
