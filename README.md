@@ -1,6 +1,8 @@
 # Testimonials - Submissions
 Front end posting of 'Testimonials by WooThemes' plugin. Form and processing via CMB2 (CMB2 is built in to this plugin). This plugin doesn't load stylesheet for your form. It's purposely lightweight. Add your own styles inside your theme or a custom plugin.
 
+I'm still a bit new to GitHub, but **pull requests are welcomed** if you'd like to contribute code.
+
 **This is a 3rd party plugin, no affiliation with WooThemes.**
 
 ## Shortcode
