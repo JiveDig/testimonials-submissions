@@ -19,9 +19,13 @@ There are a number of hooks and filters included in the plugin for quickly custo
 
 **These hook allows you to add more fields to the form.**
 Accepts anything CMB2 allows, including any custom field types you create
+
 `tbws_form_before`
+
 `tbws_form_content_field_before`
+
 `tbws_form_after`
+
 Example usage:
 ```
 // Add a new text field after the form
