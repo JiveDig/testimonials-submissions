@@ -93,7 +93,7 @@ function prefix_process_my_field_data( $post_meta ) {
 `tbws_success_redirect`
 
 ### * Form success message
-**Filter the success message HTML
+**Filter the success message HTML**
 
 `tbws_success_message`
 
