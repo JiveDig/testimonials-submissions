@@ -49,6 +49,7 @@ Accepts anything CMB2 allows, including any custom field types you create
 Example usage:
 ```
 // Add a new text field after the form
+// This field can be added to post_meta via tbws_submitted_post_meta filter
 add_action( 'tbws_form_after', 'prefix_my_new_form_field' );
 function prefix_my_new_form_field( $cmb ) {
     $cmb->add_field( array(
@@ -69,6 +70,18 @@ function prefix_my_new_form_field( $cmb ) {
 
 `tbws_content_kses` - Change wp_kses arguments
 See https://codex.wordpress.org/Function_Reference/wp_kses
+
+Example usage:
+```
+// Process our new form field data to a custom field key 
+add_filter( 'tbws_submitted_post_meta', 'prefix_process_my_field_data' );
+function prefix_process_my_field_data( $post_meta ) {
+	if ( ! empty( $_POST['submitted_post_before'] ) ) {
+		$post_meta['my_custom_meta_key'] = $sanitized_values['submitted_post_before'];
+	}
+	return $post_meta;
+}
+```
 
 ### * Form redirect
 ** Filter the redirect url**
