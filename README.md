@@ -1,5 +1,5 @@
 # Testimonials - Submissions
-Front end posting of 'Testimonials by WooThemes' plugin. Form and processing via CMB2 (CMB2 is built in to this plugin). This plugin doesn't load stylesheet for your form. It's purposely lightweight. Add your own styles inside your theme or a custom plugin.
+Front end posting of 'Testimonials by WooThemes' plugin. Form and processing via CMB2 (CMB2 is built in to this plugin). This plugin doesn't load stylesheet for your form. It's purposely lightweight. Add your own styles inside your theme or a custom plugin. Some basic CSS examples are below.
 
 I'm still a bit new to GitHub, but **pull requests are welcomed** if you'd like to contribute code.
 
@@ -96,3 +96,21 @@ function prefix_process_my_field_data( $post_meta ) {
 **Filter the success message HTML
 
 `tbws_success_message`
+
+## Basic Styling
+Here is some basic CSS to add to your theme/plugin to get you started with styling
+```
+#cmb2-metabox-tbws_testimonial .cmb-row {
+	margin-bottom: 15px;
+}
+
+#cmb2-metabox-tbws_testimonial .cmb-th {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#cmb2-metabox-tbws_testimonial .cmb2-metabox-description {
+	color: rgba(0,0,0,0.7);
+	font-size: 14px;
+}
+```
