@@ -4,12 +4,10 @@ Front end posting of 'Testimonials by WooThemes' plugin. Form and processing via
 **This is a 3rd party plugin, no affiliation with WooThemes.**
 
 ## Shortcode
-```
-[tbws_form]
-```
-```
-[tbws_form post_status="%your status here%"]
-```
+`[tbws_form]`
+
+`[tbws_form post_status="%your status here%"]`
+
 Use shortcode `[tbws_form]` to insert the submission form on any WP post/page.
 Submissions default to a post status of **draft** so they can be manually approved.
 If you want your submissions to be published immediately you can use the `post_status` attribute in the shortcode. Example `[tbws_form post_status="publish"]`.
