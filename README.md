@@ -15,9 +15,10 @@ If you want your submissions to be published immediately you can use the `post_s
 ## Hooks & Filters
 There are a number of hooks and filters included in the plugin for quickly customizing the form
 
+### Form output
 `tbws_submission_form`
 
-This hook runs at prior to outputting the form via the shortcode. You can use it to display content, or restrict access to the form for various conditions.
+This filter runs at prior to outputting the form via the shortcode. You can use it to display content, or restrict access to the form for various conditions.
 
 Example usage:
 ```
@@ -35,6 +36,7 @@ function prefix_form_require_logged_in_user( $output ) {
 }
 ```
 
+### Form fields
 **These hook allows you to add more fields to the form.**
 Accepts anything CMB2 allows, including any custom field types you create
 
@@ -57,3 +59,6 @@ function prefix_my_new_form_field( $cmb ) {
     ) );
 }
 ```
+
+### Form data processing
+**These filters allow you to process the data submitted by the form, including any custom form fields you may have added**
