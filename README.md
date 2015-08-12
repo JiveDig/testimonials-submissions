@@ -20,7 +20,7 @@ There are a number of hooks and filters included in the plugin for quickly custo
 
 This filter runs at prior to outputting the form via the shortcode. You can use it to display content, or restrict access to the form for various conditions.
 
-Example usage:
+**Example usage:**
 ```
 // Restric access to testimonial submission for if not logged in
 add_filter( 'tbws_submission_form', 'prefix_form_require_logged_in_user' );
@@ -46,7 +46,7 @@ Accepts anything CMB2 allows, including any custom field types you create
 
 `tbws_form_after`
 
-Example usage:
+**Example usage:**
 ```
 // Add a new text field after the form
 // This field can be added to post_meta via tbws_submitted_post_meta filter
@@ -71,7 +71,7 @@ function prefix_my_new_form_field( $cmb ) {
 `tbws_content_kses` - Change wp_kses arguments
 See https://codex.wordpress.org/Function_Reference/wp_kses
 
-Example usage:
+**Example usage:**
 ```
 // Process our new form field data to a custom field key 
 add_filter( 'tbws_submitted_post_meta', 'prefix_process_my_field_data' );
