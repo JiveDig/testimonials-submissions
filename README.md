@@ -3,6 +3,8 @@ Front end posting of 'Testimonials by WooThemes' plugin. Form and processing via
 
 I'm still a bit new to GitHub, but **pull requests are welcomed** if you'd like to contribute code.
 
+TODO: Add support for 'testimonial-category' custom taxonomy
+
 **This is a 3rd party plugin, no affiliation with WooThemes.**
 
 ## Shortcode

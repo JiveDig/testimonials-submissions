@@ -16,14 +16,14 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Plugin and class main setup
-if ( ! class_exists( 'Testimonials_Submissions' ) ) {
+if ( ! class_exists( 'TBWS_Testimonials_Submissions' ) ) {
 
-	final class Testimonials_Submissions {
+	final class TBWS_Testimonials_Submissions {
 
 		/**
 		 * Holds the instance
 		 *
-		 * Ensures that only one instance of Testimonials_Submissions exists in memory at any one
+		 * Ensures that only one instance of TBWS_Testimonials_Submissions exists in memory at any one
 		 * time and it also prevents needing to define globals all over the place.
 		 *
 		 * TL;DR This is a static property property that holds the singleton instance.
@@ -44,8 +44,8 @@ if ( ! class_exists( 'Testimonials_Submissions' ) ) {
 		 *
 		 */
 		public static function get_instance() {
-			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof Testimonials_Submissions ) ) {
-				self::$instance = new Testimonials_Submissions;
+			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof TBWS_Testimonials_Submissions ) ) {
+				self::$instance = new TBWS_Testimonials_Submissions;
 				self::$instance->setup_globals();
 				self::$instance->includes();
 			}
@@ -58,8 +58,8 @@ if ( ! class_exists( 'Testimonials_Submissions' ) ) {
 		 *
 		 * @since 1.0
 		 * @access private
-		 * @see Testimonials_Submissions::init()
-		 * @see Testimonials_Submissions::activation()
+		 * @see TBWS_Testimonials_Submissions::init()
+		 * @see TBWS_Testimonials_Submissions::activation()
 		 */
 		private function __construct() {
 			self::$instance = $this;
@@ -116,7 +116,7 @@ if ( ! class_exists( 'Testimonials_Submissions' ) ) {
 		 * @since 1.0
 		 * @access public
 		 *
-		 * @uses Testimonials_Submissions::load_textdomain()
+		 * @uses TBWS_Testimonials_Submissions::load_textdomain()
 		 *
 		 * @return void
 		 */
@@ -155,7 +155,7 @@ if ( ! class_exists( 'Testimonials_Submissions' ) ) {
 	 *
 	 * @since 1.0
 	 *
-	 * @see Testimonials_Submissions::get_instance()
+	 * @see TBWS_Testimonials_Submissions::get_instance()
 	 *
 	 * @return object Returns an instance of the main class
 	 */
@@ -165,11 +165,11 @@ if ( ! class_exists( 'Testimonials_Submissions' ) ) {
 	    if ( ! class_exists( 'Woothemes_Testimonials' ) ) {
 			add_action( 'admin_notices', 'tbws_testimonials_missing_woothemes_testimonials' );
 		} else {
-	        return Testimonials_Submissions::get_instance();
+	        return TBWS_Testimonials_Submissions::get_instance();
 	    }
 	}
 
-} // Testimonials_Submissions
+} // TBWS_Testimonials_Submissions
 
 /**
  * Add an error notice to the dashboard if CMB2 is not activated
