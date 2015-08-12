@@ -123,9 +123,12 @@ function tbws_do_new_offer_submission_shortcode() {
         ) );
     }
 
+    // Set our default button text
+    $button_text = __( 'Submit', 'tbws' );
+
     // Form button text
     $form_args = array(
-        'save_button' => __( 'Submit Testimonial', 'tbws' ),
+        'save_button' => apply_filters( 'tbws_submit_button_text', $button_text ),
     );
 
     // Get our form
